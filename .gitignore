@@ -1,0 +1,17 @@
+/docs
+/dist
+node_modules
+
+/.settings
+.project
+
+#*
+*$
+*.BAK
+*.bak
+*.log
+*.old
+*~
+.#*
+.DS_Store
+,*
