@@ -5,17 +5,18 @@
     "springbokjs",
     "shim"
   ],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "springbokjs.org",
   "license": "MIT",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "repository": "git://github.com/christophehurpeau/springbokjs-shim.git",
-  "dependencies": {},
+  "dependencies": {
+    "gulp": "~3.5.6",
+    "gulp-concat": "~2.1.7"
+  },
   "devDependencies": {
     "es5-shim": ">= 2.3.0",
     "es6-shim": ">= 0.10.1",
-    "gulp": "~3.5.6",
-    "gulp-concat": "~2.1.7",
     "mocha": "~1.18.0",
     "chai": "~1.9.0"
   },
