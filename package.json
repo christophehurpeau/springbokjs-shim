@@ -23,7 +23,7 @@
     "napa": "~0.4.1"
   },
   "scripts": {
-    "install": "napa douglascrockford/JSON-js:douglascrockford-JSON-js",
+    "install": "node_modules/.bin/napa douglascrockford/JSON-js:douglascrockford-JSON-js",
     "test": "firefox test.html"
   },
   "testling": {
