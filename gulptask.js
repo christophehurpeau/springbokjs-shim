@@ -1,4 +1,4 @@
-module.exports = function(gulp) {
+module.exports = function(gulp, dist) {
     var concat = require('gulp-concat');
     var uglify = require('gulp-uglify');
 
@@ -13,6 +13,6 @@ module.exports = function(gulp) {
         gulp.src(["node_modules/springbokjs-shim/node_modules/es6-shim/es6-shim.js"])
             .pipe(concat("es6-compat.js"))
             .pipe(uglify())
-            .pipe(gulp.dest('dist/'));
+            .pipe(gulp.dest(dist || 'dist/'));
     });
 };
