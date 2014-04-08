@@ -8,11 +8,15 @@ module.exports = function(gulp, dist) {
                 "node_modules/springbokjs-shim/node_modules/es5-shim/es5-shim.js",
                 "node_modules/springbokjs-shim/node_modules/es5-shim/es5-sham.js"])
             .pipe(concat("es5-compat.js"))
-            .pipe(uglify())
-            .pipe(gulp.dest('dist/'));
+            .pipe(uglify({
+                compress: false,
+            }))
+            .pipe(gulp.dest(dist || 'dist/'));
         gulp.src(["node_modules/springbokjs-shim/node_modules/es6-shim/es6-shim.js"])
             .pipe(concat("es6-compat.js"))
-            .pipe(uglify())
+            .pipe(uglify({
+                compress: false,
+            }))
             .pipe(gulp.dest(dist || 'dist/'));
     });
 };
