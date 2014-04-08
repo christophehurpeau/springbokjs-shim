@@ -10,12 +10,16 @@ module.exports = function(gulp, dist) {
             .pipe(concat("es5-compat.js"))
             .pipe(uglify({
                 compress: false,
+                mangle: false,
+                output: {beautify: true },
             }))
             .pipe(gulp.dest(dist || 'dist/'));
         gulp.src(["node_modules/springbokjs-shim/node_modules/es6-shim/es6-shim.js"])
             .pipe(concat("es6-compat.js"))
             .pipe(uglify({
                 compress: false,
+                mangle: false,
+                output: {beautify: true },
             }))
             .pipe(gulp.dest(dist || 'dist/'));
     });
