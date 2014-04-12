@@ -1,7 +1,7 @@
 var S_loadSyncScript=function(path){
     var xhr=new XMLHttpRequest;
     xhr.open('GET', path , false);
-    xhr.send();
+    xhr.send('');
     if(xhr.status !== 200) new Error('Unable to load: '+path+'.js');
     var s = document.createElement('script');
     s.type = "text/javascript";
