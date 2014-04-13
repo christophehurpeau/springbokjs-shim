@@ -25,8 +25,14 @@ module.exports = function(gulp, dist) {
                 output: {beautify: true },
             }))
             .pipe(gulp.dest(dist || 'dist/'));
-        gulp.src(["node_modules/springbokjs-shim/vendor/IE9.js"])
-            .pipe(insert.prepend("if(window.msie && window.msie < 9){\n"))
+        gulp.src([
+                "node_modules/springbokjs-shim/vendor/base2-dom-fp.js",
+                "node_modules/springbokjs-shim/vendor/IE9.js"
+            ])
+            .pipe(concat("IE9.js"))
+            .pipe(insert.prepend("var divTestIsIeLt9 = document.createElement('div'); "
+                            + "divTestIsIeLt9.innerHTML = '<!--[if lt IE 9]><i></i><![endif]-->';"
+                            + " if(divTestIsIeLt9.getElementsByTagName('i').length == 1){console && console.log('Shim for IE lt 9');\n"))
             .pipe(insert.append("\n}"))
             .pipe(gulp.dest(dist || 'dist/'));
     });
