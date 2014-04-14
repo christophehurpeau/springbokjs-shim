@@ -28,14 +28,15 @@ module.exports = function(gulp, dist) {
             }))
             .pipe(gulp.dest(dist || 'dist/'));
         gulp.src([
+                //http://dean.edwards.name/weblog/2007/03/yet-another/
                 "node_modules/springbokjs-shim/vendor/base2-dom-fp.js",
                 "node_modules/springbokjs-shim/vendor/IE9.js"
             ])
             .pipe(concat("IE9.js"))
             .pipe(insert.prepend("var divTestIsIeLt9 = document.createElement('div'); "
                             + "divTestIsIeLt9.innerHTML = '<!--[if lt IE 9]><i></i><![endif]-->';"
-                            + " if(divTestIsIeLt9.getElementsByTagName('i').length == 1){console && console.log('Shim for IE lt 9');\n"))
-            .pipe(insert.append("\n}"))
+                            + " if(divTestIsIeLt9.getElementsByTagName('i').length == 1){window.console && console.log('Shim for IE lt 9');\n"))
+            .pipe(insert.append("\ndivTestIsIeLt9=null;\nbase2.DOM.bind(document);\n}"))
             .pipe(gulp.dest(dist || 'dist/'));
     });
 };

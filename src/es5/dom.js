@@ -1,3 +1,12 @@
+/* http://polyfilljs.com/js/mylibs/getelementsbyclassname.js*/
+if (!document.getElementsByClassName) {
+    document.getElementsByClassName = function (classes) {
+        return document.querySelectorAll('.' + classes.replace(/ /g,' .'));
+    };
+}
+
+
+
 /* DOM-shim : https://github.com/Raynos/DOM-shim/tree/master/src/all/interfaces */
 
 var shim=function(name,shim){
@@ -11,7 +20,7 @@ var shim=function(name,shim){
         delete shim.prototype;
     }
     
-    console&&console.log("adding interface ", name);
+    window.console&&console.log("adding interface ", name);
     
     if (shim.hasOwnProperty("constructor")) {
         window[name] = constructor = shim.constructor;
