@@ -36,7 +36,7 @@ module.exports = function(gulp, dist) {
             .pipe(insert.prepend("var divTestIsIeLt9 = document.createElement('div'); "
                             + "divTestIsIeLt9.innerHTML = '<!--[if lt IE 9]><i></i><![endif]-->';"
                             + " if(divTestIsIeLt9.getElementsByTagName('i').length == 1){window.console && console.log('Shim for IE lt 9');\n"))
-            .pipe(insert.append("\ndivTestIsIeLt9=null;\nbase2.DOM.bind(document);\n}"))
+            .pipe(insert.append("\nbase2.DOM.bind(document);\n}\ndivTestIsIeLt9=null;"))
             .pipe(gulp.dest(dist || 'dist/'));
     });
 };
