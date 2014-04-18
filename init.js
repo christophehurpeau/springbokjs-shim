@@ -10,7 +10,7 @@ var S_loadSyncScript=function(path){
 };
 //http://kangax.github.io/es5-compat-table/
 //http://kangax.github.io/es5-compat-table/es6/ Promise: FF >= 30, Chrome >= 33
-if (!Object.keys || !(typeof Promise !== 'undefined' && typeof Promise.all === 'function')) {
+if (!Object.keys || !(typeof Promise !== 'undefined' && typeof Promise.all === 'function') || !String.prototype.startsWith) {
     Object.keys || S_loadSyncScript('dist/es5-compat.js');
     S_loadSyncScript('dist/es6-compat.js');
 }
