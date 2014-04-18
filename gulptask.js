@@ -18,6 +18,7 @@ module.exports = function(gulp, dist) {
                 mangle: false,
                 output: {beautify: true },
             }))
+            .pipe(insert.prepend("window.console && console.log('es5 compatibility');\n"))
             .pipe(gulp.dest(dist || 'dist/'));
         gulp.src(["node_modules/springbokjs-shim/node_modules/es6-shim/es6-shim.js"])
             .pipe(concat("es6-compat.js"))
@@ -26,6 +27,7 @@ module.exports = function(gulp, dist) {
                 mangle: false,
                 output: {beautify: true },
             }))
+            .pipe(insert.prepend("window.console && console.log('es6 compatibility');\n"))
             .pipe(gulp.dest(dist || 'dist/'));
         gulp.src([
                 //http://dean.edwards.name/weblog/2007/03/yet-another/
