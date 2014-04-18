@@ -1,11 +1,16 @@
-var S_loadSyncScript=function(path){
-    var xhr=new XMLHttpRequest;
-    xhr.open('GET', path , false);
-    xhr.send('');
-    if(xhr.status !== 200) new Error('Unable to load: '+path+'.js');
+var S_loadSyncScript = function(path){
     var s = document.createElement('script');
     s.type = "text/javascript";
-    s.text = xhr.responseText;
+    if (s.async) {
+        s.async = false;
+        s.src = path;
+    } else {
+        var xhr=new XMLHttpRequest;
+        xhr.open('GET', path , false);
+        xhr.send('');
+        if(xhr.status !== 200) new Error('Unable to load: '+path+'.js');
+        s.text = xhr.responseText;
+    }
     document.getElementsByTagName('head')[0].appendChild(s);
 };
 //http://kangax.github.io/es5-compat-table/
