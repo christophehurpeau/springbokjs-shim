@@ -5,22 +5,22 @@
     "springbokjs",
     "shim"
   ],
-  "version": "0.1.14",
+  "version": "0.1.15",
   "homepage": "springbokjs.org",
   "license": "MIT",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "repository": "git://github.com/christophehurpeau/springbokjs-shim.git",
   "dependencies": {
-    "es5-shim": ">= 2.3.0",
+    "es5-shim": ">= 3.1.1",
     "es6-shim": ">= 0.10.1",
-    "gulp": "~3.6.0",
-    "gulp-concat": "~2.2.0",
+    "gulp": "~3.6.2",
+    "gulp-concat": "^2.2.0",
     "gulp-insert": "^0.3.0",
-    "gulp-uglify": "~0.2.1",
+    "gulp-uglify": "^0.2.1",
     "napa": "~0.4.1"
   },
   "devDependencies": {
-    "mocha": "~1.18.2",
+    "mocha": "^1.18.2",
     "proclaim": "^2.0.0"
   },
   "scripts": {
