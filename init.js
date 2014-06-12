@@ -6,7 +6,7 @@ var S_loadSyncScript = function(path) {
         s.async = false;
         s.src = path;
     } else {
-        var xhr=new XMLHttpRequest;
+        var xhr=new XMLHttpRequest();
         xhr.open('GET', path , false);
         xhr.send('');
         if(xhr.status !== 200) new Error('Unable to load: '+path+'.js');
@@ -16,7 +16,7 @@ var S_loadSyncScript = function(path) {
 };
 //http://kangax.github.io/es5-compat-table/
 //http://kangax.github.io/es5-compat-table/es6/ Promise: FF >= 30, Chrome >= 33
-if (!Object.keys || !(typeof Promise !== 'undefined' && typeof Promise.all === 'function') || !String.prototype.startsWith) {
+if (!Object.assign) {
     (Object.keys && window.CustomEvent) || S_loadSyncScript('dist/es5-compat.js');
     S_loadSyncScript('dist/es6-compat.js');
 }
