@@ -5,7 +5,7 @@ module.exports = function(gulp, dist) {
 
     gulp.task('springbokjs-shim', function() {
         gulp.src(["node_modules/springbokjs-shim/src/es5/html5elements.js",
-                "node_modules/springbokjs-shim/node_modules/douglascrockford-JSON-js/json2.js", // IE < 8, iOS < 4.0.
+                "node_modules/springbokjs-shim/vendor/json2.js", // IE < 8, iOS < 4.0.
                 "node_modules/springbokjs-shim/node_modules/es5-shim/es5-shim.js",
                 "node_modules/springbokjs-shim/node_modules/es5-shim/es5-sham.js",
                 "node_modules/springbokjs-shim/src/es5/addEventListener.js",
