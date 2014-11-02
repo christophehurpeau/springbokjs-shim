@@ -1,5 +1,5 @@
 var S_loadSyncScript = function(path) {
-    path = (window.basepath || '/') + path;
+    path = (window.webpath || window.basepath || '/') + path;
     var s = document.createElement('script');
     s.type = "text/javascript";
     if (s.async) {
